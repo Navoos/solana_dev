@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@solana/web3.js": "^1.91.7",
+    "mz": "^2.7.0"
+  },
+  "scripts": {
+    "start": "ts-node src/client/main.ts",
+    "build:program": "cargo build-bpf --manifest-path=./src/program/Cargo.toml --bpf-out-dir=dist/program"
+  },
+  "devDependencies": {
+    "@types/mz": "^2.7.8",
+    "ts-node": "^10.9.2"
+  }
+}
