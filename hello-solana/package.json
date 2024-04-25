@@ -5,10 +5,15 @@
   },
   "scripts": {
     "start": "ts-node src/client/main.ts",
-    "build:program": "cargo build-bpf --manifest-path=./src/program/Cargo.toml --bpf-out-dir=dist/program"
+    "build:program": "cargo build-bpf --manifest-path=./src/program/Cargo.toml --bpf-out-dir=$npm_package_config_bpfOutDir",
+		"deploy:program": "solana program deploy $npm_package_config_bpfOutDir/program.so",
+		"log:program": "solana logs"
   },
   "devDependencies": {
     "@types/mz": "^2.7.8",
     "ts-node": "^10.9.2"
-  }
+  },
+	"config": {
+		"bpfOutDir": "dist/program"
+	}
 }
